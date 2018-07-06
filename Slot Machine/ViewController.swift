@@ -12,40 +12,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var leftSlot: UILabel!
     @IBOutlet weak var centerSlot: UILabel!
     @IBOutlet weak var rightSlot: UILabel!
+    @IBOutlet weak var slotImage: UIImageView!
     
     let slotOptions = ["🍒", "🍋", "🍊", "🎱", "🎲", "💰"]
     
-    /*
-    var timer = Timer()
-    var cycle = 0.0
+
+    
     var index = 0
     var stopSpin = true
-    
-    func resetTimer ()
-    {
-        cycle += 0.2
-        timer.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: cycle, target: self, selector: #selector(updateDisplay), userInfo: nil, repeats: true)
-    }
-    
-    @objc func updateDisplay()
-    {
-        resetTimer()
-        index += 1
-        if(index == slotOptions.count && stopSpin){
-            index = 0
-        }
-        //leftSlot.text = slotOptions[index]
-    }
-    
-    */
-    
-    
-    
-    
+    var gameTimer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        slotImage.image = #imageLiteral(resourceName: "slot")
         //updateDisplay()
         //spin()
         // Do any additional setup after loading the view, typically from a nib.
@@ -57,6 +36,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onTap(_ sender: UITapGestureRecognizer) {
+        slotImage.image = #imageLiteral(resourceName: "slot")
         spin()
     }
     
@@ -66,14 +46,32 @@ class ViewController: UIViewController {
         let leftPick = Int(arc4random_uniform(UInt32(slotOptions.count-1)))
         let centerPick = Int(arc4random_uniform(UInt32(slotOptions.count-1)))
         let rightPick = Int(arc4random_uniform(UInt32(slotOptions.count-1)))
+        //spinWheel(labelToChange: leftSlot, rand: leftPick)
+        
         leftSlot.text = slotOptions[leftPick]
         centerSlot.text = slotOptions[centerPick]
         rightSlot.text = slotOptions[rightPick]
         
         if(leftSlot.text == centerSlot.text && centerSlot.text == rightSlot.text){
+            slotImage.image = #imageLiteral(resourceName: "winnerSlot")
             print("Winner")
         }
     }
+    /*
+    func spinWheel(labelToChange: UILabel, rand: Int){
+        for n in 0...slotOptions.count{
+            gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.setLabel(label: labelToChange, num: n)), userInfo: nil, repeats: true)
+        }
+        for n in 0...rand{
+            gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.setLabel(label: labelToChange, num: n)), userInfo: nil, repeats: true)
+        }
+    }
     
+    @objc func setLabel(label: UILabel, num: Int){
+        label.text = slotOptions[num]
+        gameTimer.invalidate()
+    }
+    
+    */
 }
 
