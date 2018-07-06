@@ -14,6 +14,9 @@
 		4FD26AD120EF17B200C053DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FD26ACF20EF17B200C053DF /* LaunchScreen.storyboard */; };
 		4FD26ADC20EF17B200C053DF /* Slot_MachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD26ADB20EF17B200C053DF /* Slot_MachineTests.swift */; };
 		4FD26AE720EF17B200C053DF /* Slot_MachineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD26AE620EF17B200C053DF /* Slot_MachineUITests.swift */; };
+		4FD8FEB220EF1DEC00E6D729 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD8FEB120EF1DEC00E6D729 /* Card.swift */; };
+		4FD8FEB420EF1FD100E6D729 /* DeckOfCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD8FEB320EF1FD100E6D729 /* DeckOfCards.swift */; };
+		4FD8FEB620EF23D000E6D729 /* BlackJackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD8FEB520EF23D000E6D729 /* BlackJackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		4FD26AE220EF17B200C053DF /* Slot MachineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Slot MachineUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD26AE620EF17B200C053DF /* Slot_MachineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot_MachineUITests.swift; sourceTree = "<group>"; };
 		4FD26AE820EF17B200C053DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FD8FEB120EF1DEC00E6D729 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4FD8FEB320EF1FD100E6D729 /* DeckOfCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCards.swift; sourceTree = "<group>"; };
+		4FD8FEB520EF23D000E6D729 /* BlackJackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,9 @@
 				4FD26AC620EF17B100C053DF /* AppDelegate.swift */,
 				4FD26AC820EF17B100C053DF /* ViewController.swift */,
 				4FD26ACA20EF17B100C053DF /* Main.storyboard */,
+				4FD8FEB520EF23D000E6D729 /* BlackJackViewController.swift */,
+				4FD8FEB120EF1DEC00E6D729 /* Card.swift */,
+				4FD8FEB320EF1FD100E6D729 /* DeckOfCards.swift */,
 				4FD26ACD20EF17B200C053DF /* Assets.xcassets */,
 				4FD26ACF20EF17B200C053DF /* LaunchScreen.storyboard */,
 				4FD26AD220EF17B200C053DF /* Info.plist */,
@@ -257,6 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FD26AC920EF17B100C053DF /* ViewController.swift in Sources */,
+				4FD8FEB620EF23D000E6D729 /* BlackJackViewController.swift in Sources */,
+				4FD8FEB420EF1FD100E6D729 /* DeckOfCards.swift in Sources */,
+				4FD8FEB220EF1DEC00E6D729 /* Card.swift in Sources */,
 				4FD26AC720EF17B100C053DF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
