@@ -9,25 +9,31 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //for every $1 that you wager, you will win back $0.92 or $0.96 in the long-term – the rest will be won by the casino. And so it is with slot machine games too
     @IBOutlet weak var leftSlot: UILabel!
     @IBOutlet weak var centerSlot: UILabel!
     @IBOutlet weak var rightSlot: UILabel!
     @IBOutlet weak var slotImage: UIImageView!
+    @IBOutlet weak var winLabel: UILabel!
+    @IBOutlet weak var coinsLabel: UILabel!
+    @IBOutlet weak var betLabel: UILabel!
     
     let slotOptions = ["🍒", "🍋", "🍊", "🎱", "🎲", "💰"]
-    
 
-    
     var index = 0
     var stopSpin = true
     var gameTimer: Timer!
+    var bet = 10
+    var winAmm = 300
+    var coins = 400
     
     override func viewDidLoad() {
         super.viewDidLoad()
         slotImage.image = #imageLiteral(resourceName: "slot")
-        //updateDisplay()
-        //spin()
-        // Do any additional setup after loading the view, typically from a nib.
+        winAmm = bet*30
+        winLabel.text = "You can win: \(winAmm)"
+        betLabel.text = "Bet: \(bet)"
+        coinsLabel.text = "PicaCoins: \(coins)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,8 +42,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onTap(_ sender: UITapGestureRecognizer) {
-        slotImage.image = #imageLiteral(resourceName: "slot")
-        spin()
+        if(coins > 0){
+            coins -= bet
+            coinsLabel.text = "PicaCoins: \(coins)"
+            slotImage.image = #imageLiteral(resourceName: "slot")
+            spin()
+        }
+    }
+    
+    @IBAction func betStepper(_ sender: UIStepper) {
+        bet = Int(sender.value)
+        winAmm = bet*30
+        betLabel.text = "Bet: \(bet)"
+        winLabel.text = "You can win: \(winAmm)"
     }
     
     func spin(){
@@ -55,6 +72,8 @@ class ViewController: UIViewController {
         if(leftSlot.text == centerSlot.text && centerSlot.text == rightSlot.text){
             slotImage.image = #imageLiteral(resourceName: "winnerSlot")
             print("Winner")
+            coins += winAmm
+            coinsLabel.text = "PicaCoins: \(coins)"
         }
     }
     /*
