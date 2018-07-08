@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var winLabel: UILabel!
     @IBOutlet weak var coinsLabel: UILabel!
     @IBOutlet weak var betLabel: UILabel!
+    @IBOutlet weak var multiplierLabel: UILabel!
     
     let slotOptions = ["🍒", "🍋", "🍊", "🎱", "🎲", "💰"]
 
@@ -28,15 +29,17 @@ class ViewController: UIViewController {
     var winAmm = 300
     var coins = 400
     var change = false
+    var multiplier = 30
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        coinsLabel.textColor = .black
         slotImage.image = #imageLiteral(resourceName: "slot")
-        winAmm = bet*30
+        winAmm = bet*multiplier
         winLabel.text = "You can win: \(winAmm)"
         betLabel.text = "Bet: \(bet)"
         coinsLabel.text = "PicaCoins: \(coins)"
+        multiplierLabel.text = "Multiplier: \(multiplier)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,19 +48,31 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onTap(_ sender: UITapGestureRecognizer) {
-        if(coins > 0){
+        if(coins >= bet){
             coins -= bet
             coinsLabel.text = "PicaCoins: \(coins)"
             slotImage.image = #imageLiteral(resourceName: "slot")
             spin()
+            if(bet > coins){
+                coinsLabel.textColor = .red
+            }
+            else{
+                coinsLabel.textColor = .black
+            }
         }
     }
     
     @IBAction func betStepper(_ sender: UIStepper) {
         bet = Int(sender.value)
-        winAmm = bet*30
+        winAmm = bet*multiplier
         betLabel.text = "Bet: \(bet)"
         winLabel.text = "You can win: \(winAmm)"
+        if(bet > coins){
+            coinsLabel.textColor = .red
+        }
+        else{
+            coinsLabel.textColor = .black
+        }
     }
     
     func spin(){
@@ -132,5 +147,12 @@ class ViewController: UIViewController {
                     gameTimer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(changeLabel), userInfo: nil, repeats: true)
     }
  */
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! SecondViewController
+        dvc.bet = bet
+        dvc.winAmm = winAmm
+        dvc.coins = coins
+        dvc.multiplier = multiplier
     }
 }

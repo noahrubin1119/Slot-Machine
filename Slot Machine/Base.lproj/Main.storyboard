@@ -160,11 +160,35 @@
                                             <action selector="betStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="taf-9N-y9z"/>
                                         </connections>
                                     </stepper>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OT9-6i-i1F">
+                                        <rect key="frame" x="316" y="80" width="51" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51" id="BGZ-FR-N2w"/>
+                                            <constraint firstAttribute="width" constant="51" id="inT-ng-fkd"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="colorPicker"/>
+                                        <connections>
+                                            <segue destination="DJt-Tn-wBH" kind="show" animates="NO" id="18Q-xD-Ohe"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multiplier: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3X-CL-OLy">
+                                        <rect key="frame" x="8" y="69" width="84" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="hRY-WY-LH4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="OT9-6i-i1F" secondAttribute="bottom" constant="8" id="0ra-58-DFQ"/>
                                     <constraint firstItem="iHz-gF-Ry8" firstAttribute="top" secondItem="Uwx-cT-g9A" secondAttribute="top" constant="8" id="9fl-vZ-Fqg"/>
                                     <constraint firstItem="2q7-8g-cib" firstAttribute="top" secondItem="Er8-tA-oNn" secondAttribute="bottom" constant="8" id="M5Y-r2-3HQ"/>
+                                    <constraint firstItem="s3X-CL-OLy" firstAttribute="top" secondItem="2q7-8g-cib" secondAttribute="bottom" constant="8" id="PSj-8X-CS5"/>
+                                    <constraint firstItem="s3X-CL-OLy" firstAttribute="leading" secondItem="Uwx-cT-g9A" secondAttribute="leading" constant="8" id="Qz3-Wo-qkQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="OT9-6i-i1F" secondAttribute="trailing" constant="8" id="Uot-t2-B68"/>
                                     <constraint firstItem="2q7-8g-cib" firstAttribute="leading" secondItem="Uwx-cT-g9A" secondAttribute="leading" constant="8" id="pIC-Lh-ugo"/>
                                     <constraint firstItem="Er8-tA-oNn" firstAttribute="top" secondItem="Uwx-cT-g9A" secondAttribute="top" constant="8" id="rjL-KC-k8x"/>
                                     <constraint firstItem="Er8-tA-oNn" firstAttribute="leading" secondItem="Uwx-cT-g9A" secondAttribute="leading" constant="8" id="y6u-7g-fUA"/>
@@ -200,6 +224,7 @@
                         <outlet property="centerSlot" destination="y7K-bq-FGT" id="iMN-k7-4mo"/>
                         <outlet property="coinsLabel" destination="Er8-tA-oNn" id="3hm-Yy-wjt"/>
                         <outlet property="leftSlot" destination="JGZ-eL-pWx" id="caR-0R-j1F"/>
+                        <outlet property="multiplierLabel" destination="s3X-CL-OLy" id="q1g-XC-ejR"/>
                         <outlet property="rightSlot" destination="y34-cM-YoP" id="3dx-o9-tac"/>
                         <outlet property="slotImage" destination="4ys-R4-jcQ" id="3AN-mo-Abv"/>
                         <outlet property="winLabel" destination="2q7-8g-cib" id="Bhn-Qh-sJb"/>
@@ -214,5 +239,123 @@
             </objects>
             <point key="canvasLocation" x="264.80000000000001" y="-385.45727136431788"/>
         </scene>
+        <!--Second View Controller-->
+        <scene sceneID="ePn-kC-BQe">
+            <objects>
+                <viewController id="DJt-Tn-wBH" customClass="SecondViewController" customModule="Slot_Machine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O35-mR-mdE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rY8-vX-gBU">
+                                <rect key="frame" x="0.0" y="508" width="375" height="139"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PicaCoins: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7e-EG-ONL">
+                                        <rect key="frame" x="8" y="8" width="85" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4G-8O-FtU">
+                                        <rect key="frame" x="316" y="80" width="51" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="51" id="TxA-yo-97w"/>
+                                            <constraint firstAttribute="height" constant="51" id="YVE-ml-RGF"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="slot"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="Sds-SJ-frC"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multiplier: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkY-Sl-bhC">
+                                        <rect key="frame" x="8" y="38" width="84" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="zcV-mf-Fbe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="UkY-Sl-bhC" firstAttribute="top" secondItem="D7e-EG-ONL" secondAttribute="bottom" constant="8" id="7Oj-dj-0RW"/>
+                                    <constraint firstItem="D7e-EG-ONL" firstAttribute="leading" secondItem="rY8-vX-gBU" secondAttribute="leading" constant="8" id="8bv-9l-1fg"/>
+                                    <constraint firstAttribute="bottom" secondItem="I4G-8O-FtU" secondAttribute="bottom" constant="8" id="N42-NA-SQA"/>
+                                    <constraint firstItem="UkY-Sl-bhC" firstAttribute="leading" secondItem="rY8-vX-gBU" secondAttribute="leading" constant="8" id="ZYm-3f-Mq7"/>
+                                    <constraint firstItem="D7e-EG-ONL" firstAttribute="top" secondItem="rY8-vX-gBU" secondAttribute="top" constant="8" id="eEj-Qw-QDe"/>
+                                    <constraint firstAttribute="trailing" secondItem="I4G-8O-FtU" secondAttribute="trailing" constant="8" id="tne-EI-mYF"/>
+                                    <constraint firstAttribute="width" secondItem="rY8-vX-gBU" secondAttribute="height" multiplier="375:139" id="zib-d0-PNL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTb-Yf-LeB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="488"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKV-bB-CI9">
+                                        <rect key="frame" x="98" y="8" width="179" height="30"/>
+                                        <color key="backgroundColor" white="0.90738932291666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="CfN-sJ-mWn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="32x Payout: 500 Coins">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="multiplierIncreasedTapped:" destination="DJt-Tn-wBH" eventType="touchUpInside" id="raV-X0-hur"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a03-gt-rpH">
+                                        <rect key="frame" x="96" y="58" width="183" height="30"/>
+                                        <color key="backgroundColor" white="0.90738932289999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="UY3-OC-D9G"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="500 Coins: -2 Multiplier">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addCoinsTapped:" destination="DJt-Tn-wBH" eventType="touchUpInside" id="IwO-NL-2lQ"/>
+                                            <action selector="multiplierIncreasedTapped:" destination="DJt-Tn-wBH" eventType="touchUpInside" id="Kl4-2f-mes"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="mKV-bB-CI9" firstAttribute="top" secondItem="pTb-Yf-LeB" secondAttribute="top" constant="8" id="71F-dB-mm2"/>
+                                    <constraint firstItem="mKV-bB-CI9" firstAttribute="centerX" secondItem="pTb-Yf-LeB" secondAttribute="centerX" id="WRc-Hd-aL8"/>
+                                    <constraint firstItem="a03-gt-rpH" firstAttribute="top" secondItem="mKV-bB-CI9" secondAttribute="bottom" constant="20" id="awQ-RI-BS2"/>
+                                    <constraint firstItem="a03-gt-rpH" firstAttribute="centerX" secondItem="pTb-Yf-LeB" secondAttribute="centerX" id="eRd-C9-QTM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rY8-vX-gBU" firstAttribute="trailing" secondItem="G6G-QS-tpc" secondAttribute="trailing" id="7hQ-Pz-bMi"/>
+                            <constraint firstItem="G6G-QS-tpc" firstAttribute="bottom" secondItem="rY8-vX-gBU" secondAttribute="bottom" constant="20" id="8Tl-gQ-dat"/>
+                            <constraint firstItem="rY8-vX-gBU" firstAttribute="leading" secondItem="G6G-QS-tpc" secondAttribute="leading" id="AtG-7Q-48n"/>
+                            <constraint firstItem="rY8-vX-gBU" firstAttribute="top" secondItem="pTb-Yf-LeB" secondAttribute="bottom" id="BbM-cm-ew6"/>
+                            <constraint firstItem="pTb-Yf-LeB" firstAttribute="leading" secondItem="G6G-QS-tpc" secondAttribute="leading" id="Q9f-b9-oNR"/>
+                            <constraint firstItem="pTb-Yf-LeB" firstAttribute="top" secondItem="G6G-QS-tpc" secondAttribute="top" id="Xgo-fW-NFG"/>
+                            <constraint firstItem="pTb-Yf-LeB" firstAttribute="trailing" secondItem="G6G-QS-tpc" secondAttribute="trailing" id="kLH-IB-6dv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G6G-QS-tpc"/>
+                    </view>
+                    <connections>
+                        <outlet property="coinLabel" destination="D7e-EG-ONL" id="lx3-Fj-Q2I"/>
+                        <outlet property="multiplierIncreseLabel" destination="mKV-bB-CI9" id="m2w-W4-b80"/>
+                        <outlet property="multiplierLabel" destination="UkY-Sl-bhC" id="XWc-Le-g3q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zHE-eE-Dux" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="-385.45727136431788"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="colorPicker" width="256" height="256"/>
+        <image name="slot" width="193" height="240"/>
+    </resources>
 </document>
