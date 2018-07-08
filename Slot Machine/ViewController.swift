@@ -20,15 +20,18 @@ class ViewController: UIViewController {
     
     let slotOptions = ["🍒", "🍋", "🍊", "🎱", "🎲", "💰"]
 
+    
     var index = 0
     var stopSpin = true
     var gameTimer: Timer!
     var bet = 10
     var winAmm = 300
     var coins = 400
+    var change = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         slotImage.image = #imageLiteral(resourceName: "slot")
         winAmm = bet*30
         winLabel.text = "You can win: \(winAmm)"
@@ -65,9 +68,14 @@ class ViewController: UIViewController {
         let rightPick = Int(arc4random_uniform(UInt32(slotOptions.count-1)))
         //spinWheel(labelToChange: leftSlot, rand: leftPick)
         
-        leftSlot.text = slotOptions[leftPick]
-        centerSlot.text = slotOptions[centerPick]
-        rightSlot.text = slotOptions[rightPick]
+        //leftSlot.text = slotOptions[leftPick]
+        //centerSlot.text = slotOptions[centerPick]
+        //rightSlot.text = slotOptions[rightPick]
+        spinWheel(labelToChange: leftSlot, rand: leftPick)
+        usleep(100)
+        spinWheel(labelToChange: centerSlot, rand: centerPick)
+        usleep(100)
+        spinWheel(labelToChange: rightSlot, rand: rightPick)
         
         if(leftSlot.text == centerSlot.text && centerSlot.text == rightSlot.text){
             slotImage.image = #imageLiteral(resourceName: "winnerSlot")
@@ -76,21 +84,53 @@ class ViewController: UIViewController {
             coinsLabel.text = "PicaCoins: \(coins)"
         }
     }
-    /*
+   
     func spinWheel(labelToChange: UILabel, rand: Int){
-        for n in 0...slotOptions.count{
-            gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.setLabel(label: labelToChange, num: n)), userInfo: nil, repeats: true)
+        for n in 0..<slotOptions.count{
+            /*
+            startTimer(time: 0.2)
+            
+            while(!change){
+               
+            }
+            labelToChange.text = slotOptions[n]
+            change = false
+            var t = 0.2
+            DispatchQueue.main.asyncAfter(deadline: .now() + t) {
+                labelToChange.text = self.slotOptions[n]
+            }
+            sleep(t)
+            t += 0.2
+             */
+            
+            labelToChange.text = self.slotOptions[n]
+        for n in 0..<rand{
+           /*//startTimer(time: 0.2)
+            change: Bool false{
+                didSet{
+                    labelToChange.text = slotOptions[n]
+                }
+ 
+            var t = 0.2
+            DispatchQueue.main.asyncAfter(deadline: .now() + t) {
+                labelToChange.text = self.slotOptions[n]
+            }
+            t += 0.2
+            */
+            
+            labelToChange.text = self.slotOptions[n]
+            }
         }
-        for n in 0...rand{
-            gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.setLabel(label: labelToChange, num: n)), userInfo: nil, repeats: true)
-        }
-    }
     
-    @objc func setLabel(label: UILabel, num: Int){
-        label.text = slotOptions[num]
+/*
+    @objc func changeLabel() {
+        change = true
         gameTimer.invalidate()
     }
-    
-    */
-}
 
+    func startTimer(time: Double){
+                    gameTimer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(changeLabel), userInfo: nil, repeats: true)
+    }
+ */
+    }
+}

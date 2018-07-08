@@ -72,10 +72,10 @@
                                 <rect key="frame" x="0.0" y="70" width="330" height="206"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3g-0c-nQJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="170" height="206"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="206"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGZ-eL-pWx">
-                                                <rect key="frame" x="73" y="76" width="24.5" height="54"/>
+                                                <rect key="frame" x="70.5" y="76" width="24.5" height="54"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <nil key="textColor"/>
@@ -85,7 +85,7 @@
                                         <constraints>
                                             <constraint firstItem="JGZ-eL-pWx" firstAttribute="centerX" secondItem="a3g-0c-nQJ" secondAttribute="centerX" id="4X0-7j-SW2"/>
                                             <constraint firstItem="JGZ-eL-pWx" firstAttribute="centerY" secondItem="a3g-0c-nQJ" secondAttribute="centerY" id="Nkm-Md-69a"/>
-                                            <constraint firstAttribute="width" constant="170" id="TkA-BV-JmQ"/>
+                                            <constraint firstAttribute="width" constant="165" id="fKM-PO-1uk"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7K-bq-FGT">
@@ -96,10 +96,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GdD-23-U1Y">
-                                        <rect key="frame" x="160" y="0.0" width="170" height="206"/>
+                                        <rect key="frame" x="165" y="0.0" width="165" height="206"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y34-cM-YoP">
-                                                <rect key="frame" x="72.5" y="76" width="24.5" height="54"/>
+                                                <rect key="frame" x="70" y="76" width="24.5" height="54"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <nil key="textColor"/>
@@ -107,9 +107,9 @@
                                             </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="165" id="NpX-ca-VGM"/>
                                             <constraint firstItem="y34-cM-YoP" firstAttribute="centerY" secondItem="GdD-23-U1Y" secondAttribute="centerY" id="jkB-j5-MVK"/>
                                             <constraint firstItem="y34-cM-YoP" firstAttribute="centerX" secondItem="GdD-23-U1Y" secondAttribute="centerX" id="mFk-SV-ZwK"/>
-                                            <constraint firstAttribute="width" constant="170" id="oid-EU-zL6"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -160,14 +160,6 @@
                                             <action selector="betStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="taf-9N-y9z"/>
                                         </connections>
                                     </stepper>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEr-FP-LVD">
-                                        <rect key="frame" x="164" y="109" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <segue destination="U0w-Qo-mom" kind="show" id="2Nd-kC-JMr"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
