@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox.AudioServices
 
 class SecondViewController: UIViewController {
 
@@ -20,12 +21,15 @@ class SecondViewController: UIViewController {
     var coins = 400
     var multiplier = 0
     
+    let pop = SystemSoundID(1312)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //multiplierIncreseLabel.setTitle("Change multiplier to \(multiplier + 2) for \(((multiplier)-29) * 250) coins", for: .normal)
         coinLabel.text = "Coins: \(coins)"
         multiplierLabel.text = "Multiplier: \(multiplier)"
         coinLabel.textColor = .black
+         multiplierLabel.textColor = .black
         if(multiplier >= 30){
             multiplierIncreseLabel.setTitle(" Change multiplier to \(multiplier + 2) for \(((multiplier)-29) * 250) coins ", for: .normal)
             coinIncreaseLabel.setTitle(" Get 500 coins for -2 multiplier ", for: .normal)
@@ -35,7 +39,11 @@ class SecondViewController: UIViewController {
             coinIncreaseLabel.setTitle(" Get 100 coins for -2 multiplier ", for: .normal)
         }
     }
-
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -51,7 +59,9 @@ class SecondViewController: UIViewController {
     
     @IBAction func multiplierIncreasedTapped(_ sender: Any) {
         if(coins >= ((multiplier-29) * 250)){
+            AudioServicesPlaySystemSound(pop)
             if(multiplier >= 30){
+                 multiplierLabel.textColor = .black
                 coinLabel.textColor = .black
                 coins -= (multiplier-29) * 250
                 multiplier += 2
@@ -62,6 +72,7 @@ class SecondViewController: UIViewController {
             }
             else{
                 coinLabel.textColor = .black
+                multiplierLabel.textColor = .black
                 coins -= 150
                 multiplier += 2
                 coinLabel.text = "Coins: \(coins)"
@@ -78,6 +89,8 @@ class SecondViewController: UIViewController {
     
     @IBAction func addCoinsTapped(_ sender: Any) {
         if(multiplier > 2){
+            AudioServicesPlaySystemSound(pop)
+            multiplierLabel.textColor = .black
             coinLabel.textColor = .black
             if(multiplier > 30) {coins += 400}
             coins += 100
@@ -95,7 +108,7 @@ class SecondViewController: UIViewController {
             }
         }
         else{
-            coinLabel.textColor = .red
+            multiplierLabel.textColor = .red
         }
     }
     

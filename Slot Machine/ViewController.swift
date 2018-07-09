@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox.AudioServices
 
 class ViewController: UIViewController {
     //for every $1 that you wager, you will win back $0.92 or $0.96 in the long-term – the rest will be won by the casino. And so it is with slot machine games too
@@ -19,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var betLabel: UILabel!
     @IBOutlet weak var multiplierLabel: UILabel!
     
+    let pop = SystemSoundID(1312)
     let slotOptions = ["🍒", "🍋", "🍊", "🎱", "🎲", "💰"]
 
     
@@ -33,6 +35,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         coinsLabel.textColor = .black
         slotImage.image = #imageLiteral(resourceName: "slot")
         winAmm = bet*multiplier
@@ -40,14 +43,20 @@ class ViewController: UIViewController {
         betLabel.text = "Bet: \(bet)"
         coinsLabel.text = "Coins: \(coins)"
         multiplierLabel.text = "Multiplier: \(multiplier)"
+        betLabel.text = "Bet: \(bet)"
     }
-
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     @IBAction func onTap(_ sender: UITapGestureRecognizer) {
+        betLabel.text = "Bet: \(bet)"
         if(coins >= bet){
             coins -= bet
             coinsLabel.text = "Coins: \(coins)"
@@ -59,6 +68,7 @@ class ViewController: UIViewController {
             else{
                 coinsLabel.textColor = .black
             }
+            
         }
     }
     
@@ -97,6 +107,7 @@ class ViewController: UIViewController {
             print("Winner")
             coins += winAmm
             coinsLabel.text = "Coins: \(coins)"
+            AudioServicesPlaySystemSound(pop)
         }
     }
    
@@ -117,6 +128,11 @@ class ViewController: UIViewController {
             sleep(t)
             t += 0.2
              */
+            
+            //
+            //stop code for .1 seconds
+            //
+            
             
             labelToChange.text = self.slotOptions[n]
         for n in 0..<rand{
@@ -155,4 +171,5 @@ class ViewController: UIViewController {
         dvc.coins = coins
         dvc.multiplier = multiplier
     }
+
 }

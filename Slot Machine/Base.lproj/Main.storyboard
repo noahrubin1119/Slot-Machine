@@ -101,7 +101,7 @@
                                         <rect key="frame" x="165" y="0.0" width="165" height="206"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y34-cM-YoP">
-                                                <rect key="frame" x="70" y="76" width="24.5" height="54"/>
+                                                <rect key="frame" x="71" y="76" width="24.5" height="54"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -261,7 +261,7 @@
                                 <rect key="frame" x="0.0" y="508" width="375" height="139"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PicaCoins: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7e-EG-ONL">
-                                        <rect key="frame" x="8" y="8" width="85" height="22.5"/>
+                                        <rect key="frame" x="8" y="8" width="85" height="23"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -278,7 +278,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multiplier: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkY-Sl-bhC">
-                                        <rect key="frame" x="8" y="38" width="84" height="23"/>
+                                        <rect key="frame" x="8" y="39" width="84" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="zcV-mf-Fbe"/>
                                         </constraints>
