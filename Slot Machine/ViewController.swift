@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         winAmm = bet*multiplier
         winLabel.text = "You can win: \(winAmm)"
         betLabel.text = "Bet: \(bet)"
-        coinsLabel.text = "PicaCoins: \(coins)"
+        coinsLabel.text = "Coins: \(coins)"
         multiplierLabel.text = "Multiplier: \(multiplier)"
     }
 
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     @IBAction func onTap(_ sender: UITapGestureRecognizer) {
         if(coins >= bet){
             coins -= bet
-            coinsLabel.text = "PicaCoins: \(coins)"
+            coinsLabel.text = "Coins: \(coins)"
             slotImage.image = #imageLiteral(resourceName: "slot")
             spin()
             if(bet > coins){
@@ -96,7 +96,7 @@ class ViewController: UIViewController {
             slotImage.image = #imageLiteral(resourceName: "winnerSlot")
             print("Winner")
             coins += winAmm
-            coinsLabel.text = "PicaCoins: \(coins)"
+            coinsLabel.text = "Coins: \(coins)"
         }
     }
    

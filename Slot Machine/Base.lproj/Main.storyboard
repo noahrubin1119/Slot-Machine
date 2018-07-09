@@ -61,6 +61,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSV-9b-2Vk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36797417534722221" green="0.602334341738889" blue="0.36301190751111112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ys-R4-jcQ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="480"/>
                                 <constraints>
@@ -76,7 +80,6 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGZ-eL-pWx">
                                                 <rect key="frame" x="70.5" y="76" width="24.5" height="54"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -90,7 +93,6 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7K-bq-FGT">
                                         <rect key="frame" x="153" y="76" width="24.5" height="54"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -100,7 +102,6 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y34-cM-YoP">
                                                 <rect key="frame" x="70" y="76" width="24.5" height="54"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -166,7 +167,7 @@
                                             <constraint firstAttribute="height" constant="51" id="BGZ-FR-N2w"/>
                                             <constraint firstAttribute="width" constant="51" id="inT-ng-fkd"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="colorPicker"/>
+                                        <state key="normal" title="Button" image="leftRight"/>
                                         <connections>
                                             <segue destination="DJt-Tn-wBH" kind="show" animates="NO" id="18Q-xD-Ohe"/>
                                         </connections>
@@ -181,7 +182,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="OT9-6i-i1F" secondAttribute="bottom" constant="8" id="0ra-58-DFQ"/>
                                     <constraint firstItem="iHz-gF-Ry8" firstAttribute="top" secondItem="Uwx-cT-g9A" secondAttribute="top" constant="8" id="9fl-vZ-Fqg"/>
@@ -200,16 +200,21 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="4ys-R4-jcQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4NF-jz-Y2h"/>
+                            <constraint firstItem="YSV-9b-2Vk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7hu-WO-9VX"/>
                             <constraint firstItem="Uwx-cT-g9A" firstAttribute="top" secondItem="4ys-R4-jcQ" secondAttribute="bottom" constant="8" id="AzF-ed-qA4"/>
                             <constraint firstItem="Uwx-cT-g9A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FtN-be-8lI"/>
                             <constraint firstItem="4DC-Ul-cfW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MEw-Og-N5P"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4DC-Ul-cfW" secondAttribute="trailing" constant="45" id="ODh-0L-8yy"/>
+                            <constraint firstItem="YSV-9b-2Vk" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="SFX-GB-YuV"/>
                             <constraint firstItem="4ys-R4-jcQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Th8-bV-KUd"/>
                             <constraint firstItem="Uwx-cT-g9A" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XTk-xX-WNg"/>
                             <constraint firstItem="4ys-R4-jcQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Y42-it-ebO"/>
+                            <constraint firstItem="YSV-9b-2Vk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b9G-vs-RgO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4DC-Ul-cfW" secondAttribute="trailing" constant="45" id="dtu-go-AXC"/>
                             <constraint firstItem="4DC-Ul-cfW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="jbq-LG-1um"/>
+                            <constraint firstItem="YSV-9b-2Vk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mxy-PS-rF7"/>
                             <constraint firstItem="4ys-R4-jcQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="npU-xQ-eH7"/>
+                            <constraint firstItem="YSV-9b-2Vk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="omI-ai-UZZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Uwx-cT-g9A" secondAttribute="bottom" constant="20" id="rcM-S4-6UF"/>
                             <constraint firstItem="4ys-R4-jcQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rt0-ca-Ia4"/>
                             <constraint firstItem="4ys-R4-jcQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vKO-0J-Ay5"/>
@@ -247,6 +252,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3Y-y7-Ahe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36797417529999998" green="0.6023343417" blue="0.36301190750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <viewLayoutGuide key="safeArea" id="rag-S2-nPd"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rY8-vX-gBU">
                                 <rect key="frame" x="0.0" y="508" width="375" height="139"/>
                                 <subviews>
@@ -277,7 +287,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="UkY-Sl-bhC" firstAttribute="top" secondItem="D7e-EG-ONL" secondAttribute="bottom" constant="8" id="7Oj-dj-0RW"/>
@@ -293,8 +302,8 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="488"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKV-bB-CI9">
-                                        <rect key="frame" x="98" y="8" width="179" height="30"/>
-                                        <color key="backgroundColor" white="0.90738932291666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="98" y="50" width="179" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="CfN-sJ-mWn"/>
                                         </constraints>
@@ -302,13 +311,18 @@
                                         <state key="normal" title="32x Payout: 500 Coins">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="multiplierIncreasedTapped:" destination="DJt-Tn-wBH" eventType="touchUpInside" id="raV-X0-hur"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a03-gt-rpH">
-                                        <rect key="frame" x="96" y="58" width="183" height="30"/>
-                                        <color key="backgroundColor" white="0.90738932289999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="96" y="100" width="183" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="UY3-OC-D9G"/>
                                         </constraints>
@@ -316,34 +330,43 @@
                                         <state key="normal" title="500 Coins: -2 Multiplier">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="addCoinsTapped:" destination="DJt-Tn-wBH" eventType="touchUpInside" id="IwO-NL-2lQ"/>
-                                            <action selector="multiplierIncreasedTapped:" destination="DJt-Tn-wBH" eventType="touchUpInside" id="Kl4-2f-mes"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="mKV-bB-CI9" firstAttribute="top" secondItem="pTb-Yf-LeB" secondAttribute="top" constant="8" id="71F-dB-mm2"/>
                                     <constraint firstItem="mKV-bB-CI9" firstAttribute="centerX" secondItem="pTb-Yf-LeB" secondAttribute="centerX" id="WRc-Hd-aL8"/>
                                     <constraint firstItem="a03-gt-rpH" firstAttribute="top" secondItem="mKV-bB-CI9" secondAttribute="bottom" constant="20" id="awQ-RI-BS2"/>
                                     <constraint firstItem="a03-gt-rpH" firstAttribute="centerX" secondItem="pTb-Yf-LeB" secondAttribute="centerX" id="eRd-C9-QTM"/>
+                                    <constraint firstItem="mKV-bB-CI9" firstAttribute="top" secondItem="pTb-Yf-LeB" secondAttribute="top" constant="50" id="nan-QL-DaZ"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="n3Y-y7-Ahe" firstAttribute="bottom" secondItem="G6G-QS-tpc" secondAttribute="bottom" id="3fn-ED-2zA"/>
                             <constraint firstItem="rY8-vX-gBU" firstAttribute="trailing" secondItem="G6G-QS-tpc" secondAttribute="trailing" id="7hQ-Pz-bMi"/>
                             <constraint firstItem="G6G-QS-tpc" firstAttribute="bottom" secondItem="rY8-vX-gBU" secondAttribute="bottom" constant="20" id="8Tl-gQ-dat"/>
                             <constraint firstItem="rY8-vX-gBU" firstAttribute="leading" secondItem="G6G-QS-tpc" secondAttribute="leading" id="AtG-7Q-48n"/>
                             <constraint firstItem="rY8-vX-gBU" firstAttribute="top" secondItem="pTb-Yf-LeB" secondAttribute="bottom" id="BbM-cm-ew6"/>
                             <constraint firstItem="pTb-Yf-LeB" firstAttribute="leading" secondItem="G6G-QS-tpc" secondAttribute="leading" id="Q9f-b9-oNR"/>
+                            <constraint firstItem="n3Y-y7-Ahe" firstAttribute="centerX" secondItem="O35-mR-mdE" secondAttribute="centerX" id="TTb-8L-r97"/>
                             <constraint firstItem="pTb-Yf-LeB" firstAttribute="top" secondItem="G6G-QS-tpc" secondAttribute="top" id="Xgo-fW-NFG"/>
+                            <constraint firstItem="n3Y-y7-Ahe" firstAttribute="top" secondItem="O35-mR-mdE" secondAttribute="top" id="YGG-g6-Zib"/>
                             <constraint firstItem="pTb-Yf-LeB" firstAttribute="trailing" secondItem="G6G-QS-tpc" secondAttribute="trailing" id="kLH-IB-6dv"/>
+                            <constraint firstItem="n3Y-y7-Ahe" firstAttribute="trailing" secondItem="G6G-QS-tpc" secondAttribute="trailing" id="u5v-Uv-qGf"/>
+                            <constraint firstItem="n3Y-y7-Ahe" firstAttribute="leading" secondItem="G6G-QS-tpc" secondAttribute="leading" id="wYb-2g-P5b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G6G-QS-tpc"/>
                     </view>
                     <connections>
+                        <outlet property="coinIncreaseLabel" destination="a03-gt-rpH" id="QkP-JS-614"/>
                         <outlet property="coinLabel" destination="D7e-EG-ONL" id="lx3-Fj-Q2I"/>
                         <outlet property="multiplierIncreseLabel" destination="mKV-bB-CI9" id="m2w-W4-b80"/>
                         <outlet property="multiplierLabel" destination="UkY-Sl-bhC" id="XWc-Le-g3q"/>
@@ -355,7 +378,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="colorPicker" width="256" height="256"/>
+        <image name="leftRight" width="400" height="400"/>
         <image name="slot" width="193" height="240"/>
     </resources>
 </document>

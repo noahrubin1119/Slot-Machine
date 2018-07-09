@@ -13,18 +13,27 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var coinLabel: UILabel!
     @IBOutlet weak var multiplierIncreseLabel: UIButton!
     @IBOutlet weak var multiplierLabel: UILabel!
+    @IBOutlet weak var coinIncreaseLabel: UIButton!
     
     var bet = 10
     var winAmm = 300
     var coins = 400
-    var multiplier = 30
+    var multiplier = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        multiplierIncreseLabel.setTitle("Change multiplier to \(multiplier + 2) for \(((multiplier)-29) * 250) coins", for: .normal)
-        coinLabel.text = "PicaCoins: \(coins)"
+        //multiplierIncreseLabel.setTitle("Change multiplier to \(multiplier + 2) for \(((multiplier)-29) * 250) coins", for: .normal)
+        coinLabel.text = "Coins: \(coins)"
         multiplierLabel.text = "Multiplier: \(multiplier)"
         coinLabel.textColor = .black
+        if(multiplier >= 30){
+            multiplierIncreseLabel.setTitle(" Change multiplier to \(multiplier + 2) for \(((multiplier)-29) * 250) coins ", for: .normal)
+            coinIncreaseLabel.setTitle(" Get 500 coins for -2 multiplier ", for: .normal)
+        }
+        else{
+            multiplierIncreseLabel.setTitle(" Change multiplier to \(multiplier + 2) for 150 coins ", for: .normal)
+            coinIncreaseLabel.setTitle(" Get 100 coins for -2 multiplier ", for: .normal)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,12 +51,25 @@ class SecondViewController: UIViewController {
     
     @IBAction func multiplierIncreasedTapped(_ sender: Any) {
         if(coins >= ((multiplier-29) * 250)){
-            coinLabel.textColor = .black
-            coins -= (multiplier-29) * 250
-            multiplier += 2
-            coinLabel.text = "PicaCoins: \(coins)"
-            multiplierIncreseLabel.setTitle("Change multiplier to \(multiplier + 2) for \(((multiplier)-29) * 250) coins", for: .normal)
-            multiplierLabel.text = "Multiplier: \(multiplier)"
+            if(multiplier >= 30){
+                coinLabel.textColor = .black
+                coins -= (multiplier-29) * 250
+                multiplier += 2
+                coinLabel.text = "Coins: \(coins)"
+                multiplierIncreseLabel.setTitle(" Change multiplier to \(multiplier + 2) for \(((multiplier)-29) * 250) coins ", for: .normal)
+                coinIncreaseLabel.setTitle(" Get 500 coins for -2 multiplier ", for: .normal)
+                multiplierLabel.text = "Multiplier: \(multiplier)"
+            }
+            else{
+                coinLabel.textColor = .black
+                coins -= 150
+                multiplier += 2
+                coinLabel.text = "Coins: \(coins)"
+                    multiplierIncreseLabel.setTitle(" Change multiplier to \(multiplier + 2) for 150 coins ", for: .normal)
+                coinIncreaseLabel.setTitle(" Get 100 coins for -2 multiplier ", for: .normal)
+                
+                multiplierLabel.text = "Multiplier: \(multiplier)"
+            }
         }
         else{
             coinLabel.textColor = .red
@@ -56,10 +78,24 @@ class SecondViewController: UIViewController {
     
     @IBAction func addCoinsTapped(_ sender: Any) {
         if(multiplier > 2){
-            multiplier -= 2
-            coins += 500
-            coinLabel.text = "PicaCoins: \(coins)"
+            coinLabel.textColor = .black
+            if(multiplier > 30) {coins += 400}
+            coins += 100
+            multiplier += -2
+            coinLabel.text = "Coins: \(coins)"
+            multiplierIncreseLabel.setTitle(" Change multiplier to \(multiplier + 2) for \(((multiplier)-29) * 250) coins ", for: .normal)
             multiplierLabel.text = "Multiplier: \(multiplier)"
+            if(multiplier >= 30){
+                multiplierIncreseLabel.setTitle(" Change multiplier to \(multiplier + 2) for \(((multiplier)-29) * 250) coins ", for: .normal)
+                coinIncreaseLabel.setTitle(" Get 500 coins for -2 multiplier ", for: .normal)
+            }
+            else{
+                multiplierIncreseLabel.setTitle(" Change multiplier to \(multiplier + 2) for 150 coins ", for: .normal)
+                coinIncreaseLabel.setTitle(" Get 100 coins for -2 multiplier ", for: .normal)
+            }
+        }
+        else{
+            coinLabel.textColor = .red
         }
     }
     
